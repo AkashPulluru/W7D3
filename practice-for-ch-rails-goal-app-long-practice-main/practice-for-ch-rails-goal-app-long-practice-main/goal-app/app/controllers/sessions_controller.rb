@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-    before_action :require_logged_in, except[:new, :create]
-    before_action :require_logged_out, except[:destroy]
+    before_action :require_logged_in, except: [:new, :create]
+    before_action :require_logged_out, except: [:destroy]
 
     def new
         @user = User.new
