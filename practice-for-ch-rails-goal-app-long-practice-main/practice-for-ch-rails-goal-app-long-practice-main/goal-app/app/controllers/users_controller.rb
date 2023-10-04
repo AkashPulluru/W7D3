@@ -16,10 +16,11 @@ class UsersController < ApplicationController
     def create 
         @user = User.new(user_params)
 
-        if user.save 
+        if @user.save 
+            login(@user)
             redirect_to user_url(@user)
         else 
-            redirect_to :new 
+            render :new 
         end 
     end 
 
